@@ -1,0 +1,45 @@
+{
+  "name": "mesh-stretch-class",
+  "version": "0.1.0",
+  "description": "Peer-to-peer mesh: group yoga / stretch class. Phones detect 'holding the pose' via accelerometer; instructor sees the aggregate.",
+  "type": "module",
+  "private": false,
+  "homepage": "https://baditaflorin.github.io/mesh-stretch-class/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baditaflorin/mesh-stretch-class.git"
+  },
+  "bugs": {
+    "url": "https://github.com/baditaflorin/mesh-stretch-class/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "bash scripts/build-pages.sh",
+    "preview": "vite preview --host 0.0.0.0",
+    "pages-preview": "vite preview --host 0.0.0.0 --port 4174",
+    "test": "vitest run --passWithNoTests",
+    "smoke": "bash scripts/smoke.sh",
+    "fmt": "prettier --write .",
+    "fmt:check": "prettier --check .",
+    "typecheck": "tsc --noEmit -p tsconfig.app.json"
+  },
+  "dependencies": {
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "y-webrtc": "^10.3.0",
+    "yjs": "^13.6.27"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.6",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "prettier": "^3.7.4",
+    "typescript": "^5.9.3",
+    "vite": "^7.0.0",
+    "vitest": "^4.0.15"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

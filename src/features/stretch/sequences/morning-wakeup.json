@@ -1,0 +1,42 @@
+{
+  "id": "morning-wakeup",
+  "name": "Morning wake-up",
+  "description": "5-minute easy sequence to wake the body up.",
+  "poses": [
+    {
+      "name": "Mountain pose",
+      "holdSec": 30,
+      "notes": "Stand tall, feet hip-width, arms by your sides. Breathe deep into the belly."
+    },
+    {
+      "name": "Standing forward fold",
+      "holdSec": 45,
+      "notes": "Hinge at the hips, soft knees, let the head hang. Sway gently if it feels good."
+    },
+    {
+      "name": "Cat-cow on the floor",
+      "holdSec": 60,
+      "notes": "Hands and knees. Inhale: belly drops, gaze up. Exhale: round the spine, chin to chest."
+    },
+    {
+      "name": "Downward-facing dog",
+      "holdSec": 45,
+      "notes": "Press the floor away. Bend the knees if hamstrings need it. Pedal the feet."
+    },
+    {
+      "name": "Low lunge, right",
+      "holdSec": 40,
+      "notes": "Right foot forward, left knee down. Sink the hips. Lift the chest."
+    },
+    {
+      "name": "Low lunge, left",
+      "holdSec": 40,
+      "notes": "Mirror it. Left foot forward, right knee down."
+    },
+    {
+      "name": "Seated forward fold",
+      "holdSec": 50,
+      "notes": "Legs long, fold from the hips, not the waist. Let the head hang heavy."
+    }
+  ]
+}

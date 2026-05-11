@@ -1,0 +1,32 @@
+{
+  "id": "desk-recovery",
+  "name": "Desk recovery",
+  "description": "After-work undoing of the chair. 5 poses, 30 s each.",
+  "poses": [
+    {
+      "name": "Neck circles",
+      "holdSec": 30,
+      "notes": "Slow half-circles, ear toward shoulder, chin to chest. Reverse direction halfway."
+    },
+    {
+      "name": "Doorway chest stretch",
+      "holdSec": 30,
+      "notes": "Forearm against a wall, gently rotate the torso away. Switch sides at 15 s."
+    },
+    {
+      "name": "Standing side bend",
+      "holdSec": 30,
+      "notes": "Reach one arm overhead, lean to the opposite side. Lengthen the obliques."
+    },
+    {
+      "name": "Hip flexor lunge",
+      "holdSec": 30,
+      "notes": "Sunken hips, back knee down. Switch sides at 15 s. Counteracts the chair."
+    },
+    {
+      "name": "Supine spinal twist",
+      "holdSec": 30,
+      "notes": "On your back, drop both knees to one side, gaze the other way. Switch at 15 s."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "quick-yoga",
+  "name": "Quick yoga",
+  "description": "8 poses, 45 s each. A 6-minute flow that hits all the basics.",
+  "poses": [
+    {
+      "name": "Child's pose",
+      "holdSec": 45,
+      "notes": "Knees wide, big toes touching, forehead to the mat. Arms long in front."
+    },
+    {
+      "name": "Cat-cow",
+      "holdSec": 45,
+      "notes": "Flow with the breath. 5 rounds either direction."
+    },
+    {
+      "name": "Downward-facing dog",
+      "holdSec": 45,
+      "notes": "Heels reaching toward the floor. Strong arms, soft neck."
+    },
+    {
+      "name": "Plank",
+      "holdSec": 45,
+      "notes": "Shoulders over wrists, body in one line. Drop the knees if it shakes."
+    },
+    {
+      "name": "Cobra",
+      "holdSec": 45,
+      "notes": "Forearms or full extension. Lift the chest, soft glutes, gaze forward."
+    },
+    {
+      "name": "Pigeon, right",
+      "holdSec": 45,
+      "notes": "Right shin across the mat, left leg long behind. Fold forward over the front shin."
+    },
+    {
+      "name": "Pigeon, left",
+      "holdSec": 45,
+      "notes": "Mirror it. Notice if one side is tighter than the other."
+    },
+    {
+      "name": "Savasana",
+      "holdSec": 45,
+      "notes": "Lie flat, palms up, eyes closed. Let the body sink into the floor."
+    }
+  ]
+}
