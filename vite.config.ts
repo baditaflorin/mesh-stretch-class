@@ -13,6 +13,10 @@ export default defineConfig(({ mode }) => {
       __APP_VERSION__: JSON.stringify(version),
       __GIT_COMMIT__: JSON.stringify(commit.slice(0, 12)),
     },
+
+    resolve: {
+      dedupe: ["react", "react-dom", "yjs", "y-webrtc"],
+    },
     build: {
       outDir: "docs",
       emptyOutDir: false,

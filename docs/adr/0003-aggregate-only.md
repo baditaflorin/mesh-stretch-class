@@ -11,7 +11,7 @@ The instructor would arguably benefit from a per-student "Alice: moving, Bob: st
 
 ## Decision
 
-Even the instructor only sees the aggregate count "**X / N holding**." Per-peer stillness is *technically* in the awareness map but the instructor UI never renders it grouped by identity. No display name is collected from students; peers are identified only by their ephemeral `awareness.clientID`.
+Even the instructor only sees the aggregate count "**X / N holding**." Per-peer stillness is _technically_ in the awareness map but the instructor UI never renders it grouped by identity. No display name is collected from students; peers are identified only by their ephemeral `awareness.clientID`.
 
 ## Consequences
 

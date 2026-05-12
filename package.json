@@ -18,17 +18,23 @@
     "build": "bash scripts/build-pages.sh",
     "preview": "vite preview --host 0.0.0.0",
     "pages-preview": "vite preview --host 0.0.0.0 --port 4174",
-    "test": "vitest run --passWithNoTests",
+    "test": "npm run test:unit && npm run test:e2e",
     "smoke": "bash scripts/smoke.sh",
     "fmt": "prettier --write .",
     "fmt:check": "prettier --check .",
-    "typecheck": "tsc --noEmit -p tsconfig.app.json"
+    "typecheck": "tsc --noEmit -p tsconfig.app.json",
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:install": "playwright install chromium"
   },
   "dependencies": {
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "y-webrtc": "^10.3.0",
-    "yjs": "^13.6.27"
+    "yjs": "^13.6.27",
+    "@baditaflorin/mesh-common": "file:../mesh-common"
   },
   "devDependencies": {
     "@types/react": "^19.2.6",
@@ -37,7 +43,11 @@
     "prettier": "^3.7.4",
     "typescript": "^5.9.3",
     "vite": "^7.0.0",
-    "vitest": "^4.0.15"
+    "vitest": "^2.1.0",
+    "@playwright/test": "^1.50.0",
+    "@testing-library/jest-dom": "^6.6.0",
+    "@testing-library/react": "^16.1.0",
+    "jsdom": "^26.0.0"
   },
   "engines": {
     "node": ">=22"
