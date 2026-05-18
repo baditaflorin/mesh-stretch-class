@@ -3,7 +3,7 @@ import { Stretch } from "./features/stretch/Stretch";
 import { SettingsDrawer } from "./features/settings/SettingsDrawer";
 import { appConfig } from "./shared/config";
 import { sequences } from "./features/stretch/sequences";
-import { InviteShareButton } from "@baditaflorin/mesh-common";
+import { InviteShareButton, MeshBeacon } from "@baditaflorin/mesh-common";
 
 type Role = "instructor" | "student";
 
@@ -51,6 +51,8 @@ export function App() {
       <Stretch roomId={roomId} role={role} sequenceId={sequenceId} jerkThreshold={jerkThreshold} />
 
       <InviteShareButton appName={appConfig.appName} roomId={roomId} />
+      <MeshBeacon app={appConfig.appName} room={roomId} />
+
       <button
         type="button"
         className="settings-fab"
