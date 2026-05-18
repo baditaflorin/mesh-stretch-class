@@ -1,6 +1,9 @@
 export const appConfig = {
   appName: "mesh-stretch-class",
   storagePrefix: "mesh-stretch-class",
+  description:
+    "Peer-to-peer mesh stretching class. Each phone's accelerometer detects movement; the room advances when everyone holds the pose still.",
+  accentHex: "#c490e8",
   version: __APP_VERSION__,
   commit: __GIT_COMMIT__,
   repositoryUrl: "https://github.com/baditaflorin/mesh-stretch-class",
