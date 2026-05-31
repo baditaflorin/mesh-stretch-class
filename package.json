@@ -1,6 +1,6 @@
 {
   "name": "mesh-stretch-class",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Peer-to-peer mesh: group yoga / stretch class. Phones detect 'holding the pose' via accelerometer; instructor sees the aggregate.",
   "type": "module",
   "private": false,
@@ -37,6 +37,7 @@
     "@baditaflorin/mesh-common": "file:../mesh-common"
   },
   "devDependencies": {
+    "@types/node": "^22.10.0",
     "@types/react": "^19.2.6",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
