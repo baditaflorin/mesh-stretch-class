@@ -76,6 +76,51 @@ test("instructor advancing the pose sequence syncs the pose + timer to a student
   }
 });
 
+/**
+ * Load-bearing cross-peer test for the advertised privacy feature:
+ *
+ *   "The instructor sees only the aggregate — '5 / 8 holding' — never who's
+ *    wobbling."
+ *
+ * The aggregate denominator (number of students) is computed from each peer's
+ * y-protocols *awareness* role broadcast, NOT from the shared Y.Map. This is a
+ * separate cross-peer path from the pose-sync test above. We assert the
+ * instructor's "X / N" readout counts a student peer that joins the room.
+ *
+ * This FAILS if the awareness role wiring breaks (wrong field key, stale
+ * freshness window, or counting the instructor itself) — the instructor would
+ * stay stuck on "0 / 0".
+ */
+test("instructor's aggregate readout counts a student peer over awareness", async ({
+  browser,
+  baseURL,
+}) => {
+  const { a, b, cleanup } = await openTwoPeers(browser, baseURL ?? "", { storagePrefix });
+  try {
+    // Peer A becomes the instructor; peer B stays a student (default).
+    await openSettings(a);
+    await a.locator('select:has(option[value="instructor"])').selectOption("instructor");
+    await a.getByRole("button", { name: "Close" }).click();
+    await expect(a.locator(".mesh-settings-drawer, .settings-drawer")).toHaveCount(0);
+
+    await a.getByRole("button", { name: /Open instructor view/i }).click();
+
+    // Before the student arms, the instructor counts zero students.
+    await expect(a.locator(".stretch-aggregate-num")).toHaveText(/0\s*\/\s*0/);
+
+    // Student arms → broadcasts role:"student" via awareness.
+    await b.getByRole("button", { name: /Allow motion & connect/i }).click();
+
+    // The instructor's denominator must reach 1 (the student), and never count
+    // itself. We poll because awareness republishes on a 1s loop.
+    await expect(a.locator(".stretch-aggregate-num")).toHaveText(/\d+\s*\/\s*1/, {
+      timeout: 10_000,
+    });
+  } finally {
+    await cleanup();
+  }
+});
+
 /** Open the MeshShell settings drawer if it isn't already open. */
 async function openSettings(page: import("@playwright/test").Page) {
   const drawer = page.locator(".mesh-settings-drawer, .settings-drawer");
