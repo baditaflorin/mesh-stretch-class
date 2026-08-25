@@ -34,8 +34,8 @@ test("instructor advancing the pose sequence syncs the pose + timer to a student
     await a.locator('select:has(option[value="instructor"])').selectOption("instructor");
     // Close the drawer (overlay backdrop) so the arm button underneath is
     // reachable. The header "Close" (×) button is the canonical control.
-    await a.getByRole("button", { name: "Close" }).click();
-    await expect(a.locator(".mesh-settings-drawer, .settings-drawer")).toHaveCount(0);
+    await a.getByRole("button", { name: "close" }).click();
+    await expect(a.getByRole("dialog", { name: "Settings" })).toBeHidden();
 
     // Role propagated into the arm screen.
     await expect(a.getByRole("button", { name: /Open instructor view/i })).toBeVisible();
@@ -100,8 +100,8 @@ test("instructor's aggregate readout counts a student peer over awareness", asyn
     // Peer A becomes the instructor; peer B stays a student (default).
     await openSettings(a);
     await a.locator('select:has(option[value="instructor"])').selectOption("instructor");
-    await a.getByRole("button", { name: "Close" }).click();
-    await expect(a.locator(".mesh-settings-drawer, .settings-drawer")).toHaveCount(0);
+    await a.getByRole("button", { name: "close" }).click();
+    await expect(a.getByRole("dialog", { name: "Settings" })).toBeHidden();
 
     await a.getByRole("button", { name: /Open instructor view/i }).click();
 
@@ -123,9 +123,9 @@ test("instructor's aggregate readout counts a student peer over awareness", asyn
 
 /** Open the MeshShell settings drawer if it isn't already open. */
 async function openSettings(page: import("@playwright/test").Page) {
-  const drawer = page.locator(".mesh-settings-drawer, .settings-drawer");
-  if ((await drawer.count()) === 0) {
+  const drawer = page.getByRole("dialog", { name: "Settings" });
+  if (!(await drawer.isVisible().catch(() => false))) {
     await page.getByLabel("Open settings").click();
   }
-  await expect(page.locator(".mesh-settings-drawer, .settings-drawer").first()).toBeVisible();
+  await expect(drawer).toBeVisible();
 }
